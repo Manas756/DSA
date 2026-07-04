@@ -2,10 +2,10 @@
  #include <iostream>
  #include <vector>
  using namespace std;
- void helper(vector<vector<int>> &mat,int r ,int c, string path, vector<string> &ans,vector<vector<bool>> &vis){
+ void helper(vector<vector<int>> &mat,int r ,int c, string path, vector<string> &ans){
     //base cases
     int n= mat.size();
-    if(r<0 || c<0 || r>=n ||c>=n || mat[r][c]==0 || vis[r][c]==true) return;
+    if(r<0 || c<0 || r>=n ||c>=n || mat[r][c]==0 ) return;
 
     if(r==n-1 && c==n-1){
         ans.push_back(path);
@@ -13,17 +13,18 @@
     }
 
 
-    vis[r][c]=true;
+    mat[r][c]=-1;//visited
     //down    
-     helper(mat,r+1,c,path+"D",ans,vis);
+     helper(mat,r+1,c,path+"D",ans);
     //up
-    helper(mat,r-1,c,path+"U",ans,vis);
+    helper(mat,r-1,c,path+"U",ans);
     //right
-    helper(mat,r,c+1,path+"R",ans,vis);
+    helper(mat,r,c+1,path+"R",ans);
     //left
-    helper(mat,r,c-1,path+"L",ans,vis);
+    helper(mat,r,c-1,path+"L",ans);
 
-    vis[r][c] =false;
+    mat[r][c] ==1;//backtracking
+    //unvist
     
 
  }
@@ -32,8 +33,8 @@
     int n=mat.size();
     vector<string> ans;
     string path="";
-    vector<vector<bool>> vis(n,vector<bool>(n,false));//flase mateix formation
-    helper(mat,0,0,path,ans,vis);
+
+    helper(mat,0,0,path,ans);
 
     return ans;
 
