@@ -26,8 +26,6 @@ void quicksort(vector<int> &arr,int st,int end){
 
 }
 
-
-
 int main(){
     vector<int> arr = {38, 27, 43, 3, 9, 82, 10};
     quicksort(arr, 0, arr.size() - 1);
