@@ -40,8 +40,23 @@ class list{
             tail->next=newnode;
             tail=newnode;
         }
-        
-        } void printLL(){
+    }
+
+    //pop front
+    void pop_front(){
+        if(head==NULL){
+            return;
+        }
+        else{
+            Node* temp=head;
+            head=head->next;
+            temp->next=NULL;
+            delete temp;
+        }
+    }
+
+    //print a Linked list
+    void printLL(){
         Node* temp=head;
         while(temp!=NULL){
             cout<<temp->data<<"->";
@@ -49,7 +64,7 @@ class list{
         }
         cout<<0;
     }
-    };
+};
 
 int main(){
     list ll;
