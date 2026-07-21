@@ -18,6 +18,7 @@ class list{
         head=tail=NULL;
     }
 
+    //push_front
     void push_front(int val){
         Node* newnode=new Node(val);// dynamic object
         if(head==NULL){
@@ -26,10 +27,21 @@ class list{
         }else{
             newnode->next=head;
             head=newnode;
-        
+         
         }
     }
-    void printLL(){
+    //push_back
+    void push_back(int val){
+        Node* newnode=new Node(val);
+
+        if(head==NULL){
+            head=tail=newnode;
+        }else{
+            tail->next=newnode;
+            tail=newnode;
+        }
+        
+        } void printLL(){
         Node* temp=head;
         while(temp!=NULL){
             cout<<temp->data<<"->";
@@ -37,8 +49,7 @@ class list{
         }
         cout<<0;
     }
-   
-};
+    };
 
 int main(){
     list ll;
@@ -47,6 +58,7 @@ int main(){
     ll.push_front(3);
 
     ll.printLL();
+    ll.push_back(4);
 
 
     return 0;
