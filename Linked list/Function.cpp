@@ -89,6 +89,18 @@ class list{
             temp->next=newnode;
             
     }
+    int search(int key){
+        Node* temp=head;
+        int idx=0;
+        while(temp!=NULL){
+            if(temp->data==key){
+                return idx;
+            }
+            temp=temp->next;
+            idx++;
+        }
+        return -1; // Key not found
+    }
 
     //print a Linked list
     void printLL(){
@@ -106,8 +118,8 @@ int main(){
     ll.push_back(1);
     ll.push_back(2);
     ll.push_back(3);
-    ll.insert(4,1);
     ll.printLL();
+    cout<<ll.search(2)<<endl;
     
     
 
