@@ -54,6 +54,41 @@ class list{
             delete temp;
         }
     }
+    //pop back
+    void pop_back(){
+        if(head==NULL){
+            return;
+        }
+        Node*temp=head;
+        while(temp->next!=tail){
+            temp=temp->next;
+        }
+        temp->next=NULL;
+        delete tail;
+        tail=temp;
+    }
+    void insert(int val,int pos){
+
+        Node* newnode=new Node(val);
+        if(pos<0){
+            cout<<"Invalid positon"<<endl;
+            return;
+        }
+        if(pos==0){
+            push_front(val);
+        }
+        Node* temp=head;
+        for(int i=0;i<pos-1;i++){
+            if(temp==NULL){
+                cout<<"Invalid position"<<endl;
+                return;
+            }
+            temp=temp->next;
+          
+        }  newnode->next=temp->next;
+            temp->next=newnode;
+            
+    }
 
     //print a Linked list
     void printLL(){
@@ -62,20 +97,20 @@ class list{
             cout<<temp->data<<"->";
             temp=temp->next;
         }
-        cout<<0;
+    cout<<"NULL"<<endl;
     }
 };
 
 int main(){
     list ll;
-    ll.push_front(1);
-    ll.push_front(2);
-    ll.push_front(3);
-
+    ll.push_back(1);
+    ll.push_back(2);
+    ll.push_back(3);
+    ll.insert(4,1);
     ll.printLL();
-    ll.push_back(4);
+    
+    
 
 
     return 0;
-
 }
