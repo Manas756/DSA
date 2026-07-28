@@ -19,7 +19,7 @@ class list{
     }
 
     //push_front
-    void push_front(int val){
+    void push_front(int val){//0(n)
         Node* newnode=new Node(val);// dynamic object
         if(head==NULL){
             head=tail=newnode;
@@ -31,7 +31,7 @@ class list{
         }
     }
     //push_back
-    void push_back(int val){
+    void push_back(int val){//0(1)
         Node* newnode=new Node(val);
 
         if(head==NULL){
@@ -43,7 +43,7 @@ class list{
     }
 
     //pop front
-    void pop_front(){
+    void pop_front(){ //0(1)
         if(head==NULL){
             return;
         }
@@ -55,7 +55,7 @@ class list{
         }
     }
     //pop back
-    void pop_back(){
+    void pop_back(){ //0(n)
         if(head==NULL){
             return;
         }
@@ -67,7 +67,7 @@ class list{
         delete tail;
         tail=temp;
     }
-    void insert(int val,int pos){
+    void insert(int val,int pos){//0(n)
 
         Node* newnode=new Node(val);
         if(pos<0){
@@ -89,7 +89,7 @@ class list{
             temp->next=newnode;
             
     }
-    int search(int key){
+    int search(int key){//0(n)
         Node* temp=head;
         int idx=0;
         while(temp!=NULL){
@@ -103,7 +103,7 @@ class list{
     }
 
     //print a Linked list
-    void printLL(){
+    void printLL(){//0(n)
         Node* temp=head;
         while(temp!=NULL){
             cout<<temp->data<<"->";
