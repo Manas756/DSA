@@ -14,7 +14,7 @@ public:
     }
     if(!iscycle){
         return NULL;
-    }
+
     slow=head;
     ListNode* prev=NULL;
     while(slow!=fast){
