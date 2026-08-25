@@ -12,7 +12,7 @@ public:
     }
    
     for(int i=1;i<=100;i++){//so we need to find multiple of k elements
-    if(mp.find(k*i)==mp.end()){
+    if(!mp.count(k*i)){
         return k*i;
         
     }
