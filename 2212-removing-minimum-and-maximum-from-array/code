@@ -1,0 +1,28 @@
+class Solution {
+public:
+     int minimumDeletions(vector<int>& nums) {
+        int n=nums.size();
+        int maxind=0;
+        int minind=0;
+        int maxi=*max_element(nums.begin(),nums.end());
+        int mini=*min_element(nums.begin(),nums.end());
+        for(int i=0;i<n;i++){
+            if(nums[i]==maxi){
+                maxind=i;
+
+            }
+            if(nums[i]==mini){
+                minind=i;
+            }
+            
+        }
+            if(maxind<minind){
+                swap(maxind,minind);
+            }
+
+            int left=maxind+1;
+            int right=n-minind;
+            int both=(minind+1)+(n-maxind);
+        return min({left,right,both});
+    }
+};
