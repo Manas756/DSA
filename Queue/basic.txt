@@ -1,0 +1,13 @@
+
+# Queue is a fifo approach 
+where push is from rear and pop is from front and front
+
+Queue
+Dequeue
+
+
+#Front
+is use to return the linked list head data
+
+#Push 
+insert data in tail of Linked list
