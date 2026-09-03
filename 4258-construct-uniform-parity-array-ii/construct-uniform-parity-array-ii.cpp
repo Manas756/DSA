@@ -1,6 +1,6 @@
 class Solution {
 public:
-    int minElement(vector<int> array){
+    int minElement(vector<int> &array){
         int min = INT_MAX;
         for(int i : array) if(i < min) min = i;
         return min;
