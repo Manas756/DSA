@@ -16,17 +16,3 @@ int floorInbst(node* root,int key){
     return floor;
 }
 
-int main(){
-    node* root=new node(8);
-    root->left=new node(4);
-    root->right=new node(12);
-    root->left->left=new node(2);
-    root->left->right=new node(6);
-    root->right->left=new node(10);
-    root->right->right=new node(14);
-
-    int key=5;
-    cout<<floorInbst(root,key)<<endl;
-
-    return 0;
-}
