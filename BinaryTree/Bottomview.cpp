@@ -1,3 +1,4 @@
+#include<bits/stdc++.h>
 class solution{
     public:
     vecotr<int> bottomView(Node *root){
