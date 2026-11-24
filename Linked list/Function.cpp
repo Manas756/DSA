@@ -85,7 +85,8 @@ class list{
             }
             temp=temp->next;
           
-        }  newnode->next=temp->next;
+        }  
+        newnode->next=temp->next;
             temp->next=newnode;
             
     }
